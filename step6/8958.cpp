@@ -10,31 +10,25 @@ using std::vector;
 using pii=pair<int,int>;
 using lint=long long;
 
-int mod[10] = {0};
+int n;
+char arr [81];
 void input(){
-  for(int i=0; i<10; i++){
-    scanf("%d", &mod[i]);
-  }
-}
-
-void init(){
-	int cnt=0;
-  int arr[42] = {0};
-  for(int i=0; i<10; i++){
-    mod[i] = mod[i] % 42;
-  }
-
-
-  for (int i=0; i<10; i++){
-    arr[mod[i]]++;
-  }
-
-  for(int i=0; i<42; i++){
-    if(arr[i]!=0){
-      cnt++;
+  scanf("%d", &n);
+  for(int i=0; i<n; i++){
+    int sum = 0;
+    int score = 1;
+    scanf("%s", &arr);
+    for(int j=0; j<strlen(arr); j++){
+      if(arr[j]=='O'){
+        sum += score;
+        score++;
+      }
+      if(arr[j]=='X'){
+        score=1;
+      }
     }
+    printf("%d\n", sum);
   }
-  printf("%d", cnt);
 }
 
 void process(){
@@ -46,7 +40,6 @@ void output(){
 
 int main(void){
 	input();
-	init();
 	process();
 	output();
 	return 0;

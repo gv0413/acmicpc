@@ -21,6 +21,7 @@ void init(){
 }
 
 void process(int cur){
+  
   if(cur == m){
     for(int i=0; i<m; i++){
       printf("%d ", arr[i]);

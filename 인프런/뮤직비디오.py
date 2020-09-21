@@ -1,5 +1,6 @@
 n, m = map(int, input().split())
 a = list(map(int, input().split()))
+maxx = max(a)
 
 def Count(capacity) :
   cnt = 1
@@ -19,7 +20,7 @@ res = 0
 
 while lt<=rt :
   mid = (lt+rt)//2
-  if Count(mid) <= m : 
+  if mid >= maxx and Count(mid) <= m : 
     rt = mid-1
     res = mid
   else:
